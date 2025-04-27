@@ -1,0 +1,37 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.topics {
+    margin: 0 .125em .333em 0;
+    font-size: 12px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 22px;
+    font-weight: var(--base-text-weight-medium, 500);
+    cursor: pointer;
+    color: #0969da;
+    background-color: #ddf4ff;
+    border-radius: 50%;
+    padding: 5px 10px 5px 10px;
+}
+
+.black-bg-input {
+    background-color : black;
+    color: white;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+#toolbar {
+    color: white;
+}

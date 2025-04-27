@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for msg in messages %}
+        <strong>{{ msg.name }}</strong> <span class="msg-datetime">{{ msg.datetime }}</span><br>
+        <span class="msg-title">{{ msg.email }}</span>
+        <p>{{ msg.content }}</p><br><br>
+    {% endfor %}
+{% endblock %}

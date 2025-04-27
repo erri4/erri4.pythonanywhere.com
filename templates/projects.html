@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="text-2xl">Projects</h2>
+    <ul class="mt-4">
+        {% for repo in repos %}
+            <li class="mt-2">
+                <a href="{{ repo.html_url }}" class="text-blue-400" target="_blank">{{ repo.name }}</a> - {{ repo.description or "No description" }}
+                {% if repo.homepage %}
+                - <a href="{{ repo.homepage }}" class="text-blue-400">homepage</a>
+                {% endif %}
+                {% if repo.topics %}
+                <br>topics:
+                {% endif %}
+                {% for topic in repo.topics %}
+                <span class="topics">{{ topic }}</span>
+                {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

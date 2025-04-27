@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Erri4</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    </head>
+    <body class="bg-gray-900 text-white">
+    <body>
+        <nav class="p-4 flex justify-between bg-gray-800" id="toolbar">
+            <h1 class="text-lg">About Me</h1>
+            <div>
+                <a href="{{ url_for('home') }}" class="px-3">Home</a>
+                <a href="{{ url_for('projects') }}" class="px-3">Projects</a>
+                <a href="{{ url_for('contact') }}" class="px-3">Contact</a>
+                <button id="darkModeToggle" class="p-2 bg-gray-700 text-white rounded">☀️</button>
+            </div>
+        </nav>
+        <main class="p-6">{% block content %}{% endblock %}</main>
+    </body>
+</html>
