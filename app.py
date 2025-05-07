@@ -39,7 +39,7 @@ def fetch_github_repos():
 
 
 def fetch_leaved_messages() -> list[Message]:
-    sql = '''select mname, title, message, datentime from messages order by datentime'''
+    sql = '''select mname, email, message, datentime from messages order by datentime'''
     msgs = []
     with pool.select(sql) as s:
         for msg in getoldform(s.sqlres):
