@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for
 import requests
 from forms import ContactForm
 import DBConnectionPool as db
+from DBConnectionPool.database import _Row
 
 
 class Message:
@@ -22,6 +23,10 @@ PORT: int = 3300
 pool = db.ConnectionPool(HOST, USER, PASSWORD, DATABASE, PORT)
 
 
+def getoldform(table: db.Table) -> list[_Row]:
+    return table.data
+
+
 GITHUB_USERNAME = "Erri4"
 
 
@@ -37,7 +42,7 @@ def fetch_leaved_messages() -> list[Message]:
     sql = '''select mname, title, message, datentime from messages order by datentime'''
     msgs = []
     with pool.select(sql) as s:
-        for msg in s.sqlres:
+        for msg in getoldform(s.sqlres):
             name = msg['mname']
             email = msg['email']
             content = msg['message']
