@@ -20,7 +20,7 @@ USER: str = 'root'
 PASSWORD: str = '033850900reefmysql'
 DATABASE: str = 'site_contact'
 PORT: int = 3300
-pool = db.ConnectionPool(HOST, USER, PASSWORD, DATABASE, PORT)
+pool = db.ConnectionPool(PASSWORD, USER, HOST, PORT, DATABASE)
 
 
 def getoldform(table: db.Table) -> list[_Row]:
