@@ -22,11 +22,6 @@ DATABASE: str = 'site_contact'
 PORT: int = 3300
 pool = db.ConnectionPool(PASSWORD, USER, HOST, PORT, DATABASE)
 
-
-def getoldform(table: db.Table) -> list[_Row]:
-    return table.data
-
-
 GITHUB_USERNAME = "Erri4"
 
 
@@ -42,7 +37,8 @@ def fetch_leaved_messages() -> list[Message]:
     sql = '''select mname, email, message, datentime from messages order by datentime'''
     msgs = []
     with pool.select(sql) as s:
-        for msg in getoldform(s.sqlres):
+        for i in range(s.sqlres.length):
+            msg = s.sqlres.get(row=i)
             name = msg['mname']
             email = msg['email']
             content = msg['message']
