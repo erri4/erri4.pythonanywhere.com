@@ -35,3 +35,7 @@ input[type="submit"] {
 #toolbar {
     color: white;
 }
+
+#reallink {
+    color: blue;
+}
