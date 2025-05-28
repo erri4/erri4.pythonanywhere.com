@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, url_for
 import requests
 from forms import ContactForm
 import DBConnectionPool as db
-from DBConnectionPool.database import _Row
 
 
 class Message:

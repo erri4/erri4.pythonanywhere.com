@@ -5,7 +5,7 @@
     <form method="POST" class="mt-4">
         {{ form.hidden_tag() }}
         <div class="mt-2">{{ form.name.label }} {{ form.name(class="p-2 text-black") }}</div>
-        <div class="mt-2">{{ form.email.label }} {{ form.email(class="p-2 text-black") }}</div>
+        <div class="mt-2">{{ form.email.label }} {{ form.email(class="p-2 text-black") }}</div> (Optional, don't put your email if you don't want to.)
         <div class="mt-2">{{ form.message.label }} {{ form.message(class="p-2 text-black") }}</div>
         <div class="mt-4">{{ form.submit(class="bg-blue-500 p-2") }}</div>
     </form>
