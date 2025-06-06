@@ -32,12 +32,12 @@ input[type="submit"] {
     color: black;
 }
 
-#toolbar {
-    color: white;
+.reallink {
+    color: blue;
 }
 
-#reallink {
-    color: blue;
+#toolbar {
+    color: white;
 }
 
 #is {
