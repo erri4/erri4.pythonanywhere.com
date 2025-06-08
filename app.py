@@ -64,11 +64,6 @@ def adminreadcontact():
     return render_template('adminreadcontact.html', messages=messages)
 
 
-@app.route('/mandle')
-def mandle():
-    return render_template('mandlebrot.html')
-
-
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
